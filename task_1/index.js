@@ -30,11 +30,7 @@ function findUniqueIds(encodedData) {
         }
     });
 
-    for (let key in uniqueIds) {
-        if (!uniqueIds[key]) delete uniqueIds[key]
-    }
-
-    return Object.keys(uniqueIds);
+    return Object.keys(uniqueIds).filter(key => uniqueIds[key]);
 }
 
 const decoded = decodeData(encoded, translations)
